@@ -85,8 +85,9 @@ class Task(object):
         """
         Decrease streak by 1 day.
         Doesn't go to negative.
-        """
         streak = max(0, self.current_streak - 1)
+        """
+        streak = 0
         self.set_streak(streak)
         self.item.update(due={'string': 'ev day starting {}'.format(today)})
 
